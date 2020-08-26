@@ -47,4 +47,4 @@ The ETL script is executed through the etl.py file
 
 The file test.ipynb provides queries to review that the load of the data is accurate. For instance, a "%sql SELECT * FROM songs LIMIT 10;" is reflected as follows:
 
-![Songs Dataset](/docs/songs.png)
+![SongsDataset](/songs.png)
