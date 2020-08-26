@@ -19,4 +19,12 @@ The tables described above will capture the information collected (Please refer 
 
 ##### Data pipeline
 
+###### Source data
+
+###### Database creation and constraints
+
+###### ETL pipeline
+
+###### Data quality checks
+
 ##### Analysis results
