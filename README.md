@@ -20,11 +20,31 @@ The tables described above will capture the information collected (Please refer 
 ##### Data pipeline
 
 ###### Source data
+The data is sourced is from two different datasets:
+
+1. A set of JSON files that include general information about a song and its corresponding artist. The files are partitioned by the first three letters of each song's track ID. 
+2. A set of JSON files that include activity logs from the Sparkify app.
+
+Both datasets are stored within Sparkify servers
 
 ###### Database creation and constraints
 
+A PostgresDB database was created with the tables described above, and primary and foreign keys were assigned. In addition not null constraints were applied where needed. The tables were created using the SQL included in sql_queries.py and executed through the create_tables.py script.
+
 ###### ETL pipeline
 
-###### Data quality checks
+The data pipeline include the following steps:
 
-##### Analysis results
+1. Read both datasets from the source through a python script
+2. Load the song data in pandas dataframes
+3. Categorize each data point in the song data and split it across the corresponding tables defined in the schema
+4. Insert the data in the corresponding tables within the database
+5. Load the logs data in pandas dataframe, categorize the data and insert within the postgres database
+
+The ETL script is executed through the etl.py file
+
+##### Analysis and Data Quality results
+
+The file test.ipynb provides queries to review that the load of the data is accurate. For instance, a "%sql SELECT * FROM songs LIMIT 10;" is reflected as follows:
+
+![Songs Dataset](/docs/songs.png)
