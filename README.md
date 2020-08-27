@@ -38,6 +38,7 @@ The data pipeline include the following steps:
 1. Read both datasets from the source through a python script
 2. Load the song data in pandas dataframes
 3. Categorize each data point in the song data and split it across the corresponding tables defined in the schema
+4. Connect to the postgres database using python driver
 4. Insert the data in the corresponding tables within the database
 5. Load the logs data in pandas dataframe, categorize the data and insert within the postgres database
 
@@ -48,3 +49,7 @@ The ETL script is executed through the etl.py file
 The file test.ipynb provides queries to review that the load of the data is accurate. For instance, a "%sql SELECT * FROM songs LIMIT 10;" is reflected as follows:
 
 ![SongsDataset](/songs.png)
+
+Similarly, the following shows a count of the fact table
+
+![Facttable](/fact.png)
